@@ -1,12 +1,10 @@
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
-    char nome[20];
-
-    printf("Qual é o seu nome? ");
-    scanf("%c", &nome);
+    string nome = get_string("Qual é o seu nome? ");
     printf("\n");
 
-    printf("Olá, %c\n", nome);
+    printf("Olá, %s\n", nome);
 }
