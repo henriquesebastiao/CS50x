@@ -1,5 +1,5 @@
-#include <cs50.h>
-#include <stdio.h>
+#include <cs50.h> // Preprocessing
+#include <stdio.h> // Preprocessing
 
 int main(void)
 {
