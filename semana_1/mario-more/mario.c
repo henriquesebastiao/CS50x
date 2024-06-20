@@ -1,59 +1,40 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void build(int n);
-
 int main(void)
 {
-    int height;
+    int h;
 
-    // Get height
-    do
+    while (true)
     {
-        height = get_int("Height: ");
+        h = get_int("height: ");
+        if (h >= 1 && h <= 8)
+        {
+            break;
+        }
     }
-    while (height < 1 || height > 8);
 
-    // Call build function to build the wall
-    build(height);
-}
+    int columns = 1;
+    int blank;
 
-void build(int n)
-{
-    // For each new row
-    for (int i = 1; i < (n + 1); i++)
+    for (int x = h; x >= 1; x--)
     {
-        // For each row's bricks
-        for (int j = 1; j < (n + 1); j++)
-        {
-            if (j <= (n - i))
-            {
-                //Print blank spaces
-                printf(" ");
-            }
-            else
-            {
-                // Print the brick
-                printf("#");
-            }
-        }
-
-        printf("  ");
-
-        for (int k = n; k >= 1; k--)
-        {
-            if (k <= (n - i))
-            {
-                // Skip for no character at all
-            }
-            else
-            {
-                // Print the bricks
-                printf("#");
-            }
-        }
-
-        // Go to next line
         printf("\n");
+        blank = h - columns;
+        for (int i = blank; i > 0; i--)
+        {
+            printf(" ");
+        }
+        for (int i = columns; i > 0; i--)
+        {
+            printf("#");
+        }
+        printf("  ");
+        for (int i = columns; i > 0; i--)
+        {
+            printf("#");
+        }
+        columns++;
     }
+    printf("\n");
 }

@@ -1,2 +1,3 @@
 # CS50x
-### Teste
+
+Minhas soluções para os problemas do curso [CS50x](https://cs50.harvard.edu/x/2024/).
